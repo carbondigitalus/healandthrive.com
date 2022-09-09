@@ -1,0 +1,62 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script>
+	$(document).ready(function () {
+		init(); //Start the code when the page loads
+	});
+
+	function init() {
+		$('.sqs-block-markdown').nextUntil('.sqs-block-markdown, .sqs-block-code').slideUp(); //Your code (wrapped in a function)
+		$('.sqs-block-markdown')
+			.unbind()
+			.click(function () {
+				$('.sqs-block-markdown').not(this).nextUntil('.sqs-block-markdown, .sqs-block-code').slideUp(),
+					$('.sqs-block-markdown').not(this).removeClass('activedrop'),
+					$(this).nextUntil('.sqs-block-markdown, .sqs-block-code').slideToggle();
+				$(this).toggleClass('activedrop');
+			});
+		$('.sqs-block-markdown').css('cursor', 'pointer');
+	}
+
+	document.addEventListener('pageChange', function () {
+		//When the change page event fires due to ajax
+		init(); //Call the code again
+	});
+
+	/*This stuff listens for an ajax page change*/
+	window.onload = watch;
+	function watch() {
+		MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
+		var a = new MutationObserver(function (a) {
+			for (var b = 0; b < a.length; b++) {
+				var c = a[b];
+				if ('attributes' === c.type) {
+					var d = new Event('pageChange');
+					document.dispatchEvent(d);
+				}
+			}
+		});
+		a.observe(document.body, { attributes: !0, attributeFilter: ['id'] });
+	}
+</script>
+<style>
+	.sqs-block-markdown {
+		border-bottom: solid 1px #ddd;
+		cursor: pointer;
+	}
+	.sqs-block-markdown .sqs-block-content:before {
+		content: '+';
+		float: right;
+		font-size: 150%;
+		line-height: 120%;
+		color: #aaa;
+		font-weight: 100;
+	}
+	.activedrop .sqs-block-content:before {
+		content: '-' !important;
+		float: right;
+		font-size: 150%;
+		line-height: 100%;
+		color: #aaa;
+		font-weight: 100;
+	}
+</style>
