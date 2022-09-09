@@ -1,0 +1,210 @@
+/* Globals */
+@gold:rgb (153, 130, 72);
+
+// Fonts //
+@font-face {
+  font-family: "Grahamo";
+  src: url("https://static1.squarespace.com/static/5ee7b70f497c812e174972bd/t/5f244908e0596274485cbcde/1596213512715/Grahamo.otf");
+}
+@font-face {
+  font-family: "Notera";
+  src: url("https://static1.squarespace.com/static/5ee7b70f497c812e174972bd/t/5f244b3ffefe36778fa1e5e8/1596214079303/Notera_PersonalUseOnly.ttf");
+}
+@font-face {
+  font-family: "Ibarra";
+  src: url("https://static1.squarespace.com/static/5ee7b70f497c812e174972bd/t/5f2498bcf9a42b547f72d0aa/1596233916019/IbarraRealNova-Regular.ttf");
+}
+.BlogItem-title {
+  font-family: "Ibarra";
+}
+// Custom Fonts //
+h4 {
+  font-family: "Grahamo" !important;
+  color: black !important;
+  font-size: 145px !important;
+  line-height: 10vh !important;
+  font-weight: 100 !important;
+}
+h5 {
+  font-family: "Notera" !important;
+  color: #998248 !important;
+  font-size: 65px !important;
+  line-height: 17vh !important;
+  font-weight: 100 !important;
+}
+.sqs-block-quote blockquote {
+  font-family: "Ibarra" !important;
+}
+h7 {
+  font-family: "Ibarra";
+  color: #998248;
+  font-size: 32px;
+  line-height: 4.5vh !important;
+}
+h1 {
+  font-family: "Ibarra";
+}
+.image-title-wrapper * {
+  font-family: "Ibarra" !important;
+}
+#home-story,
+#about-tiffany-content-1,
+#resources-gaia,
+#resources-articles,
+#emt-content-2,
+#emt-content-3,
+#biofield-content-2,
+#personal-self-integration-content-2,
+#medical-intuition-content-2,
+#bio-well-foundational-training-1,
+#bio-well-orientation-1,
+#bio-well-advanced-training-1,
+#new-services-trauma {
+  background-color: #fff8f8;
+}
+#bio-well-banner,
+#bio-well-banner-1,
+#bio-well-trainings-banner-2,
+#directory-banner-1,
+#bio-well-webinar-1-banner-1,
+#bio-well-webinar-2-banner-2,
+#bio-well-webinar-3-banner-3,
+#bio-well-practitioners,
+#about-bio-well-banner,
+#bio-well-products-banner,
+#bio-well-trainings-banner,
+#bio-well-practitioners-banner,
+#adv-cert-banner,
+#expert-cert-banner,
+#accessories-banner,
+#webinar-banner {
+  h1 {
+    color: #998248;
+  }
+}
+// Remove Image from Card View //
+.sqs-block-image .image-block-outer-wrapper.image-block-v2 .sqs-image-content::after,
+.sqs-block-image .image-block-outer-wrapper.image-block-v2 .image-overlay {
+  display: none !important;
+}
+.sqs-block-image .image-block-outer-wrapper.image-block-v2 .intrinsic img {
+  display: none !important;
+}
+
+body.image-block-card-dynamic-font-sizing .sqs-block-image .image-block-outer-wrapper.design-layout-card a {
+  padding-bottom: 0px;
+}
+// Cookie Banner //
+/*Banner text and button typography*/
+.sqs-cookie-banner-v2 p,
+.sqs-cookie-banner-v2 button {
+  color: #fff !important;
+  font-family: Roboto;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  line-height: 1.4em;
+}
+/* Banner background color and drop shadow */
+.sqs-cookie-banner-v2 {
+  background-color: #998248 !important;
+  -webkit-box-shadow: 0px 1px 3px 0px rgba(150, 150, 150, 0.3);
+  -moz-box-shadow: 0px 1px 3px 0px rgba(150, 150, 150, 0.3);
+  box-shadow: 0px 1px 3px 0px rgba(150, 150, 150, 0.3);
+}
+
+/* Disclaimer Text */
+#block-yui_3_17_2_1_1601320924566_8405 {
+  font-size: 13px;
+  line-height: 15px;
+}
+#block-yui_3_17_2_1_1601323279025_25837,
+#block-yui_3_17_2_1_1595867996826_16183,
+#block-yui_3_17_2_1_1595867996826_18849,
+#block-yui_3_17_2_1_1594937071192_7489 {
+  font-size: 14px;
+}
+.Footer-blocks--bottom {
+  display: none;
+}
+.Footer-blocks--top {
+  display: none;
+}
+// Remove Hyphens //
+
+p,
+h1,
+h2,
+h3 {
+  -webkit-hyphens: manual !important;
+
+  -moz-hyphens: manual !important;
+
+  -ms-hyphens: manual !important;
+
+  hyphens: manual !important;
+}
+
+/* Add Biowell logo mark to navigation */
+.Header-nav-inner {
+  a[href="/biowell-1"]:after {
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-left: 5px;
+    background-image: url(https://static1.squarespace.com/static/5ee7b70f497c812e174972bd/t/62152c92e73575733029a468/1645554834874/bw.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
+
+.sqs-video-wrapper .sqs-video-overlay .sqs-video-icon {
+  background-color: #211344;
+  border-radius: 50%;
+  background-size: 28px;
+  background-position-x: 60%;
+  background-position-y: 48%;
+}
+
+.Header-nav-item[href="/podcasts"] {
+  &:after {
+    content: "New!";
+    position: relative;
+    top: -10px;
+    display: inline-block;
+    font-size: 10px;
+    margin-left: 5px;
+    color: white;
+  }
+}
+
+/* Publications page styles - Marc D. 4/22/22 */
+
+#block-yui_3_17_2_1_1650653381026_4931 {
+  .summary-item {
+    .summary-thumbnail.img-wrapper {
+      padding-bottom: 75% !important;
+    }
+    .summary-excerpt {
+      a {
+        color: @gold;
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+    }
+    img {
+      max-width: 200px;
+      height: auto !important;
+      top: 0 !important;
+      left: 50% !important;
+      transform: translatex(-50%);
+      border: 1px solid @gold;
+    }
+  }
+}
+
+.Header-nav-item--folder:nth-child(8) span.Header-nav-folder-title {
+  cursor: default;
+}
