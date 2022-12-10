@@ -1,56 +1,7 @@
-/*----------
-Change Log
-20221209 @ 1900: Jared Ledbetter
-    Add:
-        -Initial file setup.
-	Modify: 
-		-Restructure styles to align with new format.
-----------*/
-
-/*----------
-[Table of Contents]
-
-0. Global & Extends
-1. Sections
-2. Backgrounds
-3. Headings
-4. Banners
-5. Publications
-6. Cards
-7. Menu
-8. Carousels
-----------*/
-
-/*----------
-[ 0. Global & Extends ]
-----------*/
-
-/*--- Media Query Variables ---*/
-@desktop-large: ~'screen and (min-width: 1201px)';
-@desktop-small: ~'screen and (max-width: 1200px)';
-@tablet-large: ~'screen and (max-width: 992px)';
-@tablet: ~'screen and (max-width: 768px)';
-@mobile: ~'screen and (max-width: 640px)';
-@mobile-small: ~'screen and (max-width: 400px)';
-
-/*--- Media Query Usage ---*/
-@media @desktop-large {
-}
-@media @desktop-small {
-}
-@media @tablet-large {
-}
-@media @tablet {
-}
-@media @mobile {
-}
-@media @mobile-small {
-}
-
-/*--- Colors ---*/
+/* Globals */
 @gold: rgb(153, 130, 72);
 
-/*--- Fonts ---*/
+// Fonts //
 @font-face {
 	font-family: 'Grahamo';
 	src: url('https://static1.squarespace.com/static/5ee7b70f497c812e174972bd/t/5f244908e0596274485cbcde/1596213512715/Grahamo.otf');
@@ -66,40 +17,11 @@ Change Log
 	src: url('https://static1.squarespace.com/static/5ee7b70f497c812e174972bd/t/5f2498bcf9a42b547f72d0aa/1596233916019/IbarraRealNova-Regular.ttf');
 }
 
-/*----------
-[ 1. Sections ]
-----------*/
-
-/*--- Accent Background Color ---*/
-#home-story,
-#about-tiffany-content-1,
-#resources-gaia,
-#resources-articles,
-#emt-content-2,
-#emt-content-3,
-#biofield-content-2,
-#personal-self-integration-content-2,
-#medical-intuition-content-2,
-#bio-well-foundational-training-1,
-#bio-well-orientation-1,
-#bio-well-advanced-training-1,
-#new-services-trauma {
-	background-color: #fff8f8;
-}
-
-/*----------
-[ 2. Backgrounds ]
-----------*/
-
-/*----------
-[ 3. Headings ]
-----------*/
-
-/*--- HTML Tags ---*/
-h1 {
+.BlogItem-title {
 	font-family: 'Ibarra';
 }
 
+// Custom Fonts //
 h4 {
 	font-family: 'Grahamo' !important;
 	color: black !important;
@@ -116,6 +38,10 @@ h5 {
 	font-weight: 100 !important;
 }
 
+.sqs-block-quote blockquote {
+	font-family: 'Ibarra' !important;
+}
+
 h7 {
 	font-family: 'Ibarra';
 	color: #998248;
@@ -123,20 +49,30 @@ h7 {
 	line-height: 4.5vh !important;
 }
 
-/*--- Classes --*/
-.BlogItem-title {
+h1 {
 	font-family: 'Ibarra';
-}
-
-.sqs-block-quote blockquote {
-	font-family: 'Ibarra' !important;
 }
 
 .image-title-wrapper * {
 	font-family: 'Ibarra' !important;
 }
 
-/*--- Bio Well Headings ---*/
+#home-story,
+#about-tiffany-content-1,
+#resources-gaia,
+#resources-articles,
+#emt-content-2,
+#emt-content-3,
+#biofield-content-2,
+#personal-self-integration-content-2,
+#medical-intuition-content-2,
+#bio-well-foundational-training-1,
+#bio-well-orientation-1,
+#bio-well-advanced-training-1,
+#new-services-trauma {
+	background-color: #fff8f8;
+}
+
 #bio-well-banner,
 #bio-well-banner-1,
 #bio-well-trainings-banner-2,
@@ -158,13 +94,23 @@ h7 {
 	}
 }
 
-/*----------
-[ 4. Banners ]
-----------*/
+// Remove Image from Card View //
+.sqs-block-image .image-block-outer-wrapper.image-block-v2 .sqs-image-content::after,
+.sqs-block-image .image-block-outer-wrapper.image-block-v2 .image-overlay {
+	display: none !important;
+}
 
-/*--- COOKIE BANNER ---*/
+.sqs-block-image .image-block-outer-wrapper.image-block-v2 .intrinsic img {
+	display: none !important;
+}
 
-/*--- Banner text and button typography ---*/
+body.image-block-card-dynamic-font-sizing .sqs-block-image .image-block-outer-wrapper.design-layout-card a {
+	padding-bottom: 0px;
+}
+
+// Cookie Banner //
+
+/*Banner text and button typography*/
 .sqs-cookie-banner-v2 p,
 .sqs-cookie-banner-v2 button {
 	color: #fff !important;
@@ -176,7 +122,7 @@ h7 {
 	line-height: 1.4em;
 }
 
-/*--- Banner background color and drop shadow ---*/
+/* Banner background color and drop shadow */
 .sqs-cookie-banner-v2 {
 	background-color: #998248 !important;
 	-webkit-box-shadow: 0px 1px 3px 0px rgba(150, 150, 150, 0.3);
@@ -205,15 +151,30 @@ h7 {
 	display: none;
 }
 
-/*--- Remove Hyphens ---*/
+// Remove Hyphens //
+
+p,
 h1,
 h2,
-h3,
-p {
+h3 {
 	-webkit-hyphens: manual !important;
 	-moz-hyphens: manual !important;
 	-ms-hyphens: manual !important;
 	hyphens: manual !important;
+}
+
+/* Add Biowell logo mark to navigation */
+.Header-nav-inner {
+	a[href='/biowell-1']:after {
+		content: '';
+		display: inline-block;
+		width: 16px;
+		height: 16px;
+		margin-left: 5px;
+		background-image: url(https://static1.squarespace.com/static/5ee7b70f497c812e174972bd/t/62152c92e73575733029a468/1645554834874/bw.png);
+		background-size: contain;
+		background-repeat: no-repeat;
+	}
 }
 
 .sqs-video-wrapper .sqs-video-overlay .sqs-video-icon {
@@ -224,11 +185,20 @@ p {
 	background-position-y: 48%;
 }
 
-/*----------
-[ 5. Publications ]
-----------*/
+.Header-nav-item[href='/podcasts'] {
+	&:after {
+		content: 'New!';
+		position: relative;
+		top: -10px;
+		display: inline-block;
+		font-size: 10px;
+		margin-left: 5px;
+		color: white;
+	}
+}
 
-/*--- Publications page styles - Marc D. 4/22/22 ---*/
+/* Publications page styles - Marc D. 4/22/22 */
+
 #block-yui_3_17_2_1_1650653381026_4931 {
 	.summary-item {
 		.summary-thumbnail.img-wrapper {
@@ -252,53 +222,58 @@ p {
 	}
 }
 
-/*----------
-[ 6. Cards ]
-----------*/
-
-// Remove Image from Card View //
-.sqs-block-image .image-block-outer-wrapper.image-block-v2 .sqs-image-content::after,
-.sqs-block-image .image-block-outer-wrapper.image-block-v2 .image-overlay {
-	display: none !important;
-}
-
-.sqs-block-image .image-block-outer-wrapper.image-block-v2 .intrinsic img {
-	display: none !important;
-}
-
-body.image-block-card-dynamic-font-sizing .sqs-block-image .image-block-outer-wrapper.design-layout-card a {
-	padding-bottom: 0px;
-}
-
-/*----------
-[ 7. Menu ]
-----------*/
-
-/*--- Add Biowell logo mark to navigation ---*/
-.Header-nav-inner {
-	a[href='/biowell-1']:after {
-		content: '';
-		display: inline-block;
-		width: 16px;
-		height: 16px;
-		margin-left: 5px;
-		background-image: url(https://static1.squarespace.com/static/5ee7b70f497c812e174972bd/t/62152c92e73575733029a468/1645554834874/bw.png);
-		background-size: contain;
-		background-repeat: no-repeat;
-	}
-}
-.Header-nav-item[href='/podcasts'] {
-	&:after {
-		content: 'New!';
-		position: relative;
-		top: -10px;
-		display: inline-block;
-		font-size: 10px;
-		margin-left: 5px;
-		color: white;
-	}
-}
-
 .Header-nav-item--folder:nth-child(8) span.Header-nav-folder-title {
 	cursor: default;
+}
+
+/*--- Home Circles - change vertical sizing ---*/
+#home-circles-2 {
+	height: 150px;
+}
+
+/*--- Left Align P - About Page - Image Card Sections ---*/
+#about-tiffany-intro {
+	p {
+		text-align: left;
+	}
+	.image-subtitle p:first-child {
+		text-align: center !important;
+	}
+}
+#about-paul-intro {
+	.image-subtitle p {
+		text-align: left !important;
+	}
+}
+
+/*--- setup mobile banner image ---*/
+#home-banner-mobile,
+#home-banner-mobile-text {
+	display: none;
+	h7 {
+		font-size: 3em;
+	}
+	p {
+		font-size: 2em;
+	}
+}
+
+@media screen and (max-width: 992px) {
+	#home-banner-mobile,
+	#home-banner-mobile-text {
+		display: block;
+	}
+	#home-banner {
+		display: none;
+	}
+}
+@media screen and (max-width: 640px) {
+	#home-banner-mobile-text {
+		h7 {
+			font-size: 2em;
+		}
+		p {
+			font-size: 1.25em;
+		}
+	}
 }
